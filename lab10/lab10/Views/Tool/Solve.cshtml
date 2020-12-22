@@ -1,0 +1,40 @@
+﻿@section Stylesheets {
+    <link rel="stylesheet" href="~/css/common.css" />
+}
+
+@{
+    ViewBag.Title = "Rownanie kwadratowe";
+}
+<h2 class="normal">@ViewBag.Title:</h2>
+<h3 class="normal">@ViewBag.Equation</h3>
+
+@{
+    switch (ViewBag.NumberOfSolutions)
+    {
+        case 0:
+
+            <h4 class="no-solutions">Brak rozwiazan w zbiorze liczb rzeczywistych.</h4>
+
+            break;
+        case 1:
+
+            <h4 class="one-solutions">Rozwiazanie rownania to: x = @ViewBag.X1</h4>
+
+            break;
+        case 2:
+
+            <h4 class="two-solutions">Rozwiazaniami rownania sa: x1 = @ViewBag.X1  oraz x2 = @ViewBag.X2</h4>
+
+            break;
+        case "Real numbers":
+
+            <h4 class="real-numbers">Rozwiazanie to zbior liczb rzeczywistych.</h4>
+
+            break;
+        default:
+            <h4 class="error">Cos poszlo nie tak...</h4>
+            break;
+    }
+}
+
+

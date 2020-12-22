@@ -1,0 +1,12 @@
+﻿@section Stylesheets {
+    <link rel="stylesheet" href="~/css/common.css" />
+}
+
+@if (ViewBag.errorMsg != "")
+{
+    <h1 class="error">@ViewBag.errorMsg</h1>
+}
+else
+{
+    <h1 class="success">Limit ustawiono na @ViewBag.n</h1>
+}

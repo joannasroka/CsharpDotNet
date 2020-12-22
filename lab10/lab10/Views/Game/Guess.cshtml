@@ -1,0 +1,35 @@
+﻿@using lab10.Controllers;
+
+@section Stylesheets {
+    <link rel="stylesheet" href="~/css/common.css" />
+}
+
+@{
+    ViewBag.Title = "Gra w zgadywanie";
+}
+<h2 class="normal">@ViewBag.Title:</h2>
+
+
+@if (ViewBag.errorMsg != "")
+{
+    <h1 class="error">@ViewBag.errorMsg</h1>
+}
+else
+{
+    switch (ViewBag.GuessingResult)
+    {
+        case GuessingResult.TooSmall:
+            <h1 class="failed">Za mala liczba.</h1>
+            break;
+        case GuessingResult.TooLarge:
+            <h1 class="failed">Za duza liczba.</h1>
+            break;
+        case GuessingResult.Perfect:
+            <h1 class="success">Gratuluje! Zgadles! </h1>
+            break;
+        default:
+            <h1 class="error">Cos poszlo nie tak...</h1>
+            break;
+    }
+}
+
